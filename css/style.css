@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "PingFang SC","Microsoft YaHei", system-ui, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+ul {
+    padding-left: 22px;
+}
+a {
+    color: #0052cc;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+/* 顶部导航栏 */
+.site-header {
+    background-color: #1f3756;
+    position: sticky;
+    top:0;
+    z-index: 999;
+}
+.container-full {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.top-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding:10px 0;
+    flex-wrap: wrap;
+}
+.top-nav a {
+    color:#e8edf4;
+    font-size:14px;
+    /* 新增：为高亮框预留内边距 */
+    padding:4px 10px;
+    border-radius:4px;
+    transition: 0.2s all ease;
+}
+/* 新增：导航文字悬浮高亮，排除下载按钮 */
+.top-nav a:not(.nav-download):hover {
+    background-color:#3b6cb8;
+    color:#ffffff;
+}
+.nav-download {
+    background-color:#3b6cb8;
+    padding:5px 12px;
+    border-radius:4px;
+    color:#fff !important;
+}
+
+/* 下拉容器 */
+.download-dropdown {
+    position: relative;
+}
+/* 看不见的过渡桥梁，填补按钮和下拉框之间的空隙，鼠标经过不会消失 */
+.download-dropdown::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 8px;
+    z-index: -1;
+}
+/* 下拉菜单盒子，默认隐藏，去掉margin-top！ */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    min-width: 200px;
+    display: none;
+    z-index: 1000;
+    /* ❗删掉原来的 margin-top:4px; */
+}
+/* 下拉里面的链接 */
+.dropdown-menu a {
+    display:block;
+    color:#1a1a1a !important;
+    padding:8px 12px;
+    font-size:14px;
+    transition:0.2s;
+}
+.dropdown-menu a:hover {
+    background-color:#e8edf6;
+}
+/* 悬浮显示下拉 */
+.download-dropdown:hover .dropdown-menu {
+    display:block;
+}
+/* 按钮本身，去掉默认按钮样式 */
+.download-dropdown .nav-download {
+    border:none;
+    cursor:pointer;
+}
+
+
+
+
+/*整体页面双栏布局*/
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap:28px;
+    margin-top:24px;
+}
+/*侧边栏 固定悬浮*/
+.sidebar {
+    width:260px;
+}
+.sidebar-sticky {
+    position: sticky;
+    top:16px;
+    max-height: calc(100vh - 32px); /* 可视窗口高度减去上下边距 */
+    overflow-y: auto; /* 内容超出就显示侧边栏内部垂直滚动条 */
+    padding-right:6px; /* 给滚动条留出一点空隙，不压内容文字 */
+}
+.avatar-box img {
+    width: 100%;
+    max-width: 140px; /* ✅控制证件照最大宽度，调这个数字 */
+    border-radius: 6px;
+    box-shadow:0 2px 8px #cccccc;
+    display:block;
+    margin:0 auto; /* 让证件照在侧边栏里面水平居中 */
+}
+.side-info {
+    margin-top:18px;
+}
+.side-title {
+    font-weight:bold;
+    font-size:15px;
+    padding-bottom:5px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom:8px;
+}
+.side-info ul {
+    list-style:none;
+    padding-left:0;
+}
+.side-info li {
+    font-size:13px;
+    margin-bottom:5px;
+}
+.label {
+    color:#555555;
+}
+.tag-list {
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+}
+.tag {
+    background-color:#e8edf6;
+    color:#1f3756;
+    padding:2px 8px;
+    border-radius:3px;
+    font-size:12px;
+}
+.side-btn {
+    display:block;
+    background-color:#2b548c;
+    color:white;
+    text-align:center;
+    padding:7px;
+    border-radius:4px;
+    font-size:13px;
+}
+/*主内容区*/
+.main-content {
+    width:100%;
+}
+.hero-banner {
+    padding-bottom:24px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom:28px;
+}
+/*缩小主姓名字号*/
+.main-name {
+    font-size: 42px;
+    font-weight:700;
+    color:#112240;
+    margin-bottom: 6px;
+}
+.intro-text {
+    font-size:15px;
+    color:#333333;
+    margin-bottom:18px;
+}
+/*首页核心数据高亮行*/
+.data-highlight-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap:12px;
+}
+.data-item {
+    background-color:#f0f4fa;
+    padding:14px 10px;
+    text-align:center;
+    border-radius:6px;
+}
+.data-num {
+    font-size:28px;
+    font-weight:bold;
+    color:#1f3756;
+}
+.data-desc {
+    font-size:13px;
+    color:#444444;
+}
+/*通用内容块*/
+.content-block {
+    margin-bottom:30px;
+    scroll-margin-top: 70px;
+}
+.block-title {
+    font-size:20px;
+    font-weight:bold;
+    padding-bottom:6px;
+    border-bottom: 2px solid #2b548c;
+    margin-bottom:16px;
+    color:#112240;
+}
+.block-item {
+    margin-bottom:16px;
+}
+.item-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:6px;
+}
+.item-org {
+    font-size:16px;
+    font-weight:bold;
+}
+.item-time {
+    color:#555555;
+    font-size:14px;
+}
+.item-detail {
+    font-size:15px;
+}
+.item-detail p {
+    margin-bottom:6px;
+}
+.award-list li {
+    margin-bottom:4px;
+}
+/*页脚*/
+.site-footer {
+    text-align:center;
+    padding:22px;
+    font-size:13px;
+    color:#666666;
+    border-top:1px solid #eee;
+    margin-top:30px;
+}
+/* =========轮播组件【修复图片大小不一致核心】========= */
+.carousel-wrap{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    border-radius:8px;
+    margin-top:10px;
+}
+.carousel-view{
+    width:100%;
+    overflow:hidden;
+    /* 固定轮播高度，所有图片统一容器高度 */
+    height:340px;
+}
+.carousel-track{
+    display:flex;
+    transition:transform 0.5s ease;
+    height:100%;
+}
+.carousel-slide{
+    flex:0 0 100%;
+    height:100%;
+}
+.carousel-slide img{
+    width:100%;
+    height:100%;
+    display:block;
+    /*关键：图片自动裁剪填满容器，解决原图尺寸参差不齐*/
+    object-fit: cover;
+    object-position:center;
+}
+.carousel-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:36px;
+    height:36px;
+    border:none;
+    background:rgba(0,0,0,0.45);
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    z-index:10;
+    border-radius:50%;
+}
+.carousel-btn.prev{
+    left:10px;
+}
+.carousel-btn.next{
+    right:10px;
+}
+.carousel-btn:hover{
+    background:rgba(0,0,0,0.7);
+}
+/*移动端适配*/
+@media(max-width:900px){
+    .page-wrapper {
+        grid-template-columns:1fr;
+    }
+    .sidebar {
+        width:100%;
+    }
+    .sidebar-sticky {
+        position:static;
+    }
+    .avatar-box img {
+        max-width:220px;
+    }
+    .main-name {
+        font-size:32px;
+    }
+    .item-head {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:3px;
+    }
+    .top-nav {
+        gap:10px;
+    }
+    .nav-download {
+        margin-left:0;
+    }
+    .carousel-btn{
+        width:30px;
+        height:30px;
+        font-size:16px;
+    }
+    /*手机端降低轮播高度，避免太高*/
+    .carousel-view{
+        height:240px;
+    }
+    /*新增：手机下拉菜单靠左，防止跑出屏幕*/
+    .dropdown-menu{
+        right:auto;
+        left:0;
+    }
+}
+
