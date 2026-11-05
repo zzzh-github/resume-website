@@ -7,24 +7,37 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<!--顶部导航锚点菜单【修改：增加sticky固定】-->
+<!--顶部导航锚点菜单：顺序 = 正文顺序，保证点击跳转位置正确-->
 <header class="site-header">
     <div class="container-full">
         <nav class="top-nav">
+            <!-- 教育背景：两个界面都有 -->
             <a href="#edu">教育背景</a>
-            <a href="#intern">实习经历</a>
-            <a href="#project">项目竞赛</a>
-            <a href="#social">主持&实践</a>
+            <!-- 求职版专属 -->
+            <a href="#intern" class="job-only">实习经历</a>
+            <a href="#project" class="job-only">项目竞赛</a>
+            <!-- 主持版专属 -->
+            <a href="#social" class="host-only" style="display:none;">主持&实践</a>
+            <!-- 两个界面都有 -->
             <a href="#award">荣誉奖项</a>
+            <!-- 两个界面都有 -->
             <a href="#skill">专业技能</a>
+
             <div class="download-dropdown">
-                    <button class="nav-download">下载简历 ▾</button>
-                    <div class="dropdown-menu">
-                        <a href="https://pan.quark.cn/s/166523728564" target="_blank">📄下载个人简历</a>
-                        <a href="https://pan.quark.cn/s/63e5b077e137" download>📄下载传媒方向简历</a>
-                        <a href="https://pan.quark.cn/s/31d959c1d663" download>📄下载英文版简历</a>
-                    </div>
-            </div>       
+                <button class="nav-download">
+                    下载简历 ▾
+                </button>
+                <div class="dropdown-menu">
+                    <!-- 求职版：个人简历 + 英文版 -->
+                    <a href="https://pan.quark.cn/s/166523728564" target="_blank" class="job-dl">📄下载简历</a>
+                    <a href="https://pan.quark.cn/s/31d959c1d663" download class="job-dl">📄下载resume</a>
+                    <!-- 主持版：传媒方向 -->
+                    <a href="https://pan.quark.cn/s/63e5b077e137" download class="host-dl" style="display:none;">📄下载传媒方向简历</a>
+                </div>
+            </div>
+
+            <!-- 双界面切换按钮 -->
+            <button id="modeBtn" class="nav-download" style="background:#c2573b;" onclick="switchMode()">🎤 主持版</button>
          </nav>
     </div>
 </header>
@@ -52,28 +65,17 @@
                     <span class="tag">CATTI三级笔译</span>
                     <span class="tag">专八</span>
                     <span class="tag">普通话一级乙等</span>
+                    <span class="tag">CAT工具</span>
                     <span class="tag">CMS</span>
-                    <span class="tag">MemoQ</span>
 
                 </div>
             </div>
-           <!--
-            <div class="side-info">
-                <div class="side-title">简历</div>
-                    <a href="https://pan.quark.cn/s/6988cd5e3b61" target="_blank" download class="side-btn">📄下载个人简历</a>
-                <div style="margin-top:8px;">
-                    <a href="https://pan.quark.cn/s/9353b6cc2105" target="_blank" download class="side-btn">📄下载传媒方向简历</a>
-                </div>            
-                <div style="margin-top:8px;">
-                    <a href="https://pan.quark.cn/s/73a826961fa9" target="_blank" download class="side-btn">📄下载英文版简历</a>
-                </div>  
-                -->
         </div>
     </aside>
 
-    <!--主内容区域，铺满剩余宽度-->
+    <!--主内容区域-->
     <main class="main-content">
-                <!--大标题区域 重点突出姓名【修改：删除旧副标题，重构简介，更直观抓HR眼球】-->
+                <!--大标题区域-->
 <section class="hero-banner">
     <h1 class="main-name">赵政赫</h1>
     <div class="intro-text">
@@ -84,7 +86,7 @@
         <p><strong>🛠技能：</strong><strong>翻译全流程管理</strong>，<strong>AIGC媒体内容创作</strong>，基础后端开发实践</p>
         <p><strong>🎤综合：</strong>拥有<strong>大型活动主持、国际志愿翻译、晚会导演组</strong>经历，擅长<strong>跨团队沟通</strong>与<strong>公开表达</strong></p>
     </div>
-    <!--核心数据高亮块，重点展示工作产出-->
+    <!--核心数据高亮块-->
     <div class="data-highlight-row">
         <div class="data-item">
             <div class="data-num">100</div>
@@ -105,7 +107,7 @@
     </div>
 </section>
 
-
+        <!--教育背景：两个界面都有-->
         <section id="edu" class="content-block">
             <h2 class="block-title">教育背景</h2>
             <div class="block-item">
@@ -130,7 +132,8 @@
             </div>
         </section>
 
-        <section id="intern" class="content-block">
+        <!--求职版：实习经历-->
+        <section id="intern" class="content-block job-sec">
             <h2 class="block-title">实习经历</h2>
             <div class="block-item">
                 <div class="item-head">
@@ -174,7 +177,6 @@
                     </ul>
                 </div>
             </div>
-        </section>
 
             <div class="block-item">
                 <div class="item-head">
@@ -190,10 +192,10 @@
                     </ul>
                 </div>
             </div>
+        </section>
 
-
-
-        <section id="project" class="content-block">
+        <!--求职版：项目竞赛-->
+        <section id="project" class="content-block job-sec">
             <h2 class="block-title">项目与竞赛</h2>
             <div class="block-item">
                 <div class="item-head">
@@ -210,11 +212,12 @@
                     </ul>
                     <div style="margin-top:16px;">
                         <p><strong>项目演示视频：</strong></p>
-                        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
-                            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-                            src="//player.bilibili.com/player.html?isOutside=true&aid=117394659936834&bvid=BV1HZpA66EpD&cid=42518907487&p=1 &danmaku=0&autoplay=0"
-                            allowfullscreen>
-                            </iframe>
+                        <div style="max-width:600px;margin-left:auto;margin-right:auto;">
+                            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+                                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                src="//player.bilibili.com/player.html?isOutside=true&aid=117394659936834&bvid=BV1HZpA66EpD&cid=42518907487&p=1 &danmaku=0&autoplay=0"
+                                allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
             </div>
@@ -235,11 +238,12 @@
                     </ul>
                     <div style="margin-top:16px;">
                         <p><strong>项目演示视频：</strong></p>
-                        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
-                            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-                            src="//player.bilibili.com/player.html?isOutside=true&aid=117394659871665&bvid=BV1cZpA66EZh&cid=42518972403&p=1 &danmaku=0&autoplay=0"
-                            allowfullscreen>
-                            </iframe>
+                        <div style="max-width:600px;margin-left:auto;margin-right:auto;">
+                            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+                                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                src="//player.bilibili.com/player.html?isOutside=true&aid=117394659871665&bvid=BV1cZpA66EZh&cid=42518972403&p=1 &danmaku=0&autoplay=0"
+                                allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
             </div>
@@ -248,10 +252,53 @@
 
         </section>
 
-        <section id="social" class="content-block">
+        <!--主持版：主持实践-->
+        <section id="social" class="content-block host-sec" style="display:none;">
             <h2 class="block-title">主持经历 & 大型社会实践</h2>
             <div class="block-item">
                 <div class="item-detail">
+
+                    <p><strong>主持经历：</strong></p>
+                    <ul>
+                        <li>美育中国说·国际语言艺术大会全国总展示、阅读伴我行全国总展示</li>
+                        <li>北京语言大学读书节开幕式、DRAMA NIGHT戏剧之夜、致敬科技工作者文艺晚会</li>
+                        <li>第十七届（2026）北京市大学生英语演讲比赛中国传媒大学校园选拔赛</li>
+                        <li>共计主持校内外活动超20场</li>
+                    </ul>
+                <!--主持照片轮播-->
+                    <div class="carousel-wrap" id="carouselHost">
+                        <div class="carousel-view">
+                            <div class="carousel-track">
+                                <div class="carousel-slide"><img src="./assets/img/齐越节.webp" alt="主持照片"></div>
+                                <div class="carousel-slide"><img src="./assets/img/森林音乐会.webp" alt="主持照片"></div>
+                                <div class="carousel-slide"><img src="./assets/img/美育中国说.webp" alt="主持照片"></div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev">‹</button>
+                        <button class="carousel-btn next">›</button>
+                    </div>
+<br>
+                    <div style="margin-top:16px;">
+                        <p><strong>第26届齐越节报送作品——唐诗里的中国：</strong></p>
+                        <div style="max-width:600px;margin-left:auto;margin-right:auto;">
+                            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+                                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                src="//player.bilibili.com/player.html?isOutside=true&aid=117561291179979&bvid=BV1Stxf6EEJv&cid=43338957011&p=1 &danmaku=0&autoplay=0"
+                                allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:16px;">
+                        <p><strong>主持片段：</strong></p>
+                        <div style="max-width:600px;margin-left:auto;margin-right:auto;">
+                            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
+                                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                src="//player.bilibili.com/player.html?isOutside=true&aid=117561660278328&bvid=BV1nWxZ6AEbJ&cid=43341319818&p=1 &danmaku=0&autoplay=0"
+                                allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <p style="margin-top:28px;"><strong>社会实践 / 导演组 / 志愿翻译：</strong></p>
@@ -275,55 +322,54 @@
                         <button class="carousel-btn prev">‹</button>
                         <button class="carousel-btn next">›</button>
                     </div>
+                </div>
+            </div>
+        </section>
 
-<br><br><br>
-
-                    <p><strong>主持经历：</strong></p>
-                    <ul>
-                        <li>美育中国说·国际语言艺术大会全国总展示、阅读伴我行全国总展示</li>
-                        <li>北京语言大学读书节开幕式、DRAMA NIGHT戏剧之夜、致敬科技工作者文艺晚会</li>
-                        <li>北京语言大学校内活动超20场</li>
-
-                    </ul>
-                <!--主持照片轮播-->
-                    <div class="carousel-wrap" id="carouselHost">
-                        <div class="carousel-view">
-                            <div class="carousel-track">
-                                <div class="carousel-slide"><img src="./assets/img/齐越节.webp" alt="主持照片"></div>
-                                <div class="carousel-slide"><img src="./assets/img/森林音乐会.webp" alt="主持照片"></div>
-                                <div class="carousel-slide"><img src="./assets/img/美育中国说.webp" alt="主持照片"></div>
-                            </div>
-                        </div>
-                        <button class="carousel-btn prev">‹</button>
-                        <button class="carousel-btn next">›</button>
-                    </div>
-<br>
-<br>
+        <!--荣誉奖项：两个界面都有（内容按界面区分）-->
         <section id="award" class="content-block">
             <h2 class="block-title">荣誉奖项</h2>
-            <div class="block-item">
+            <!-- 求职版 -->
+            <div class="block-item job-sec">
                 <ul class="award-list">
                     <li>北京市优秀毕业生</li>
                     <li>北京市海淀区二星级志愿者</li>
-                    <li>北京语言大学校级一等奖学金</li>
+                    <li>中国传媒大学一等奖奖学金</li>
+                    <li>北京语言大学一等奖学金</li>
                     <li>2024年度英语和高级翻译学院“海星优才”奖学金</li>
                     <li>2024“外研社·国才杯”英语综合能力北京赛区铜奖</li>
                     <li>语言服务创新创业大赛全国三等奖</li>
-                    <li>“21世纪杯”全国英语演讲比赛三等奖</li>
                     <li>第18届中国大学生计算机设计大赛北京市二等奖</li>
-                    <li>第六届中华经典诵写讲大赛北京语言大学一等奖</li>
                     <li>第六届中华经典诵写讲大赛北京语言大学一等奖</li>
                     <li>北京语言大学“校级优秀团干部”</li>
                 </ul>
             </div>
+            <!-- 主持版 -->
+            <div class="block-item host-sec" style="display:none;">
+                <ul class="award-list">
+                    <li>北京市优秀毕业生</li>
+                    <li>中国传媒大学一等奖奖学金</li>
+                    <li>北京语言大学一等奖学金</li>
+                    <li>2024年度英语和高级翻译学院“海星优才”奖学金</li>
+                    <li>第六届中华经典诵写讲大赛北京语言大学一等奖</li>
+                    <li>2026.04 “一路有你”公益行爱心大使</li>
+                </ul>
+            </div>
         </section>
 
+        <!--专业技能：两个界面都有（内容按界面区分）-->
         <section id="skill" class="content-block">
             <h2 class="block-title">专业技能</h2>
-            <div class="block-item">
+            <!-- 求职版：完整版 -->
+            <div class="block-item job-sec">
                 <p><strong>语言能力：</strong>CATTI三级笔译、TEM‑8、TEM‑4良好、CET‑6（564）、普通话一级乙等</p>
                 <p><strong>翻译本地化工具：</strong>Phrase(CMS)、Trados、MemoQ、AntConc</p>
                 <p><strong>开发与AI：</strong>HTML、Cursor、FastAPI、SQL、AIGC智能媒体创作</p>
+                <p><strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套</p>
+            </div>
+            <!-- 主持版：精简版 -->
+            <div class="block-item host-sec" style="display:none;">
+                <p><strong>语言能力：</strong>六级564、专八证书、普通话一级乙等</p>
                 <p><strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套</p>
             </div>
         </section>
@@ -342,9 +388,36 @@
     ©2026 赵政赫｜个人求职简历网站，仅供求职使用
 </footer>
 
-<!--新增轮播JS，写在页面底部，无需单独js文件-->
+<!--轮播 + 双界面切换 JS-->
 <script>
-// 轮播组件封装：自动播放 + 上一张下一张按钮
+// ===== 双界面切换：求职版 / 主持版 =====
+let isJobMode = true;
+function switchMode(){
+    isJobMode = !isJobMode;
+    // 导航菜单项
+    document.querySelectorAll('.job-only').forEach(el => el.style.display = isJobMode ? '' : 'none');
+    document.querySelectorAll('.host-only').forEach(el => el.style.display = isJobMode ? 'none' : '');
+    // 正文区块
+    document.querySelectorAll('.job-sec').forEach(el => el.style.display = isJobMode ? '' : 'none');
+    document.querySelectorAll('.host-sec').forEach(el => el.style.display = isJobMode ? 'none' : '');
+    // 下载简历链接
+    document.querySelectorAll('.job-dl').forEach(el => el.style.display = isJobMode ? '' : 'none');
+    document.querySelectorAll('.host-dl').forEach(el => el.style.display = isJobMode ? 'none' : '');
+    // 按钮文字
+    const btn = document.getElementById('modeBtn');
+    if(isJobMode){
+        btn.innerText = '🎤 主持版';
+        btn.style.background = '#c2573b';
+        btn.title = '切换为主持求职版';
+    } else {
+        btn.innerText = '💼 求职版';
+        btn.style.background = '#3b6cb8';
+        btn.title = '求职版';
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ===== 轮播组件 =====
 function initCarousel(carouselId) {
     const wrap = document.getElementById(carouselId);
     const track = wrap.querySelector('.carousel-track');
