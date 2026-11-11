@@ -453,6 +453,19 @@ function switchMode(){
     }
     window.scrollTo({top:0, behavior:'smooth'});
 }
+
+// ===== 初始模式：支持 ?mode=host / #host / localStorage 直接进入主持版 =====
+(function initMode(){
+    var params = new URLSearchParams(window.location.search);
+    var wantHost =
+        params.get('mode') === 'host' ||
+        window.location.hash.indexOf('host') !== -1 ||
+        localStorage.getItem('siteMode') === 'host';
+    if (wantHost) {
+        switchMode(); // 默认是求职版，切一次即进入主持版
+    }
+})();
+
 // ===== 轮播组件 =====
 function initCarousel(carouselId) {
     const wrap = document.getElementById(carouselId);
