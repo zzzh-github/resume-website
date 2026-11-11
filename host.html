@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>主持版简历</title>
-<meta http-equiv="refresh" content="0;url=./index.html?mode=host">
-</head>
-<body>
+<title>赵政赫 · 主持版</title>
 <script>
-window.location.href = "./index.html?mode=host";
+  // 先在浏览器里记住"我要主持版"，再跳转到主页；
+  // 这样即使短链吞掉了网址参数，主页也能从本地记忆读到模式。
+  try { localStorage.setItem('siteMode', 'host'); } catch(e) {}
+  window.location.replace('./index.html#host');
 </script>
-<p>跳转失败，请 <a href="./index.html?mode=host">点击这里进入主持版</a></p>
+<noscript>
+  <meta http-equiv="refresh" content="0; url=./index.html?mode=host">
+</noscript>
+</head>
+<body style="font-family:sans-serif;text-align:center;padding-top:40px;color:#1f3756;">
+  正在进入主持版页面…
+  <p style="font-size:13px;color:#888;">如未自动跳转，请 <a href="./index.html#host">点这里</a></p>
 </body>
 </html>
