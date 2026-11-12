@@ -12,32 +12,32 @@
     <div class="container-full">
         <nav class="top-nav">
             <!-- 教育背景：两个界面都有 -->
-            <a href="#edu">教育背景</a>
-            <a href="#bilingual" class="host-only" style="display:none;">个人作品</a>
+            <a href="#edu" data-i18n="nav.edu">教育背景</a>
+            <a href="#bilingual" class="host-only" style="display:none;" data-i18n="nav.works">个人作品</a>
             <!-- 求职版专属 -->
-            <a href="#intern" class="job-only">实习与项目</a>
-            <a href="#project" class="job-only">作品与竞赛</a>
+            <a href="#intern" class="job-only" data-i18n="nav.intern">实习与项目</a>
+            <a href="#project" class="job-only" data-i18n="nav.project">作品与竞赛</a>
             <!-- 主持版专属 -->
-            <a href="#social" class="host-only" style="display:none;">主持&实践</a>
+            <a href="#social" class="host-only" style="display:none;" data-i18n="nav.social">主持&实践</a>
             <!-- 两个界面都有 -->
-            <a href="#award">荣誉奖项</a>
+            <a href="#award" data-i18n="nav.award">荣誉奖项</a>
             <!-- 两个界面都有 -->
-            <a href="#skill">专业技能</a>
+            <a href="#skill" data-i18n="nav.skill">专业技能</a>
             <div class="download-dropdown">
-                <button class="nav-download">
-                    下载简历 ▾
-                </button>
+                <button class="nav-download" data-i18n="nav.dl">下载简历 ▾</button>
                 <div class="dropdown-menu">
                     <!-- 求职版：中文求职 + 英文求职 -->
-                    <a href="./resume/resume-zh.pdf" target="_blank" class="job-dl">📄 中文简历</a>
-                    <a href="./resume/resume-en.pdf" target="_blank" class="job-dl">📄 英文简历</a>
+                    <a href="./resume/resume-zh.pdf" target="_blank" class="job-dl dl-job-zh">📄 中文简历</a>
+                    <a href="./resume/resume-en.pdf" target="_blank" class="job-dl dl-job-en">📄 Resume</a>
                     <!-- 主持版：中文主持 + 英文主持（默认隐藏，切到主持版显示） -->
-                    <a href="./resume/resume-host.pdf" target="_blank" class="host-dl" style="display:none;">📄 中文传媒方向简历</a>
-                    <a href="./resume/resume-host-en.pdf" target="_blank" class="host-dl" style="display:none;">📄 英文传媒方向简历</a>
+                    <a href="./resume/resume-host.pdf" target="_blank" class="host-dl dl-host-zh" style="display:none;">📄 中文传媒简历</a>
+                    <a href="./resume/resume-host-en.pdf" target="_blank" class="host-dl dl-host-en" style="display:none;">📄 Resume_host</a>
                 </div>
             </div>
+            <!-- 双语切换按钮 -->
+            <button id="langBtn" class="nav-download" style="background:#2d6a4f;" onclick="toggleLang()">EN</button>
             <!-- 双界面切换按钮 -->
-            <button id="modeBtn" class="nav-download" style="background:#c2573b;" onclick="switchMode()">🎤 切换为主持版</button>
+            <button id="modeBtn" class="nav-download" style="background:#c2573b;" onclick="switchMode()" data-i18n="nav.toHost">🎤 切换为主持版</button>
          </nav>
     </div>
 </header>
@@ -49,22 +49,22 @@
                 <img src="./assets/img/id_photo.webp" alt="赵政赫证件照">
             </div>
             <div class="side-info">
-                <div class="side-title">基本信息</div>
+                <div class="side-title" data-i18n="side.basic">基本信息</div>
                 <ul>
-                    <li><span class="label">出生年月</span>：2004‑06</li>
-                    <li><span class="label">政治面貌</span>：中共党员</li>
-                    <li><span class="label">居住地</span>：北京市</li>
-                    <li><span class="label">邮箱</span>：zhaozhenghee@163.com</li>
-                    <li><span class="label">电话</span>：13604455201</li>
+                    <li><span class="label" data-i18n="side.born">出生年月</span>：2004‑06</li>
+                    <li class="party-row"><span class="label" data-i18n="side.party">政治面貌</span>：<span data-i18n="side.partyVal">中共党员</span></li>
+                    <li><span class="label" data-i18n="side.loc">居住地</span>：<span data-i18n="side.locVal">北京市</span></li>
+                    <li><span class="label" data-i18n="side.email">邮箱</span>：zhaozhenghee@163.com</li>
+                    <li><span class="label" data-i18n="side.tel">电话</span>：13604455201</li>
                 </ul>
             </div>
             <div class="side-info">
-                <div class="side-title">证书&技能标签</div>
+                <div class="side-title" data-i18n="side.certs">证书&技能标签</div>
                 <div class="tag-list">
-                    <span class="tag">CATTI三级笔译</span>
-                    <span class="tag">专八</span>
-                    <span class="tag">普通话一级乙等</span>
-                    <span class="tag">高中英语教师资格证</span>
+                    <span class="tag" data-i18n="tag.catti">CATTI三级笔译</span>
+                    <span class="tag" data-i18n="tag.tem8">专八</span>
+                    <span class="tag" data-i18n="tag.mandarin">普通话一级乙等</span>
+                    <span class="tag" data-i18n="tag.teacher">高中英语教师资格证</span>
                     <span class="tag">CAT工具</span>
                     <span class="tag">CMS</span>
                 </div>
@@ -75,67 +75,67 @@
     <main class="main-content">
                 <!--大标题区域-->
 <section class="hero-banner">
-    <h1 class="main-name">赵政赫</h1>
+    <h1 class="main-name" data-i18n="hero.name">赵政赫</h1>
     <div class="intro-text">
-        <p><strong>🎓学历：</strong></p>
-        <p style="padding-left:1.4rem;">研究生：<strong>中国传媒大学</strong> 英语笔译（影视翻译方向 · 保研）</p>
-        <p style="padding-left:1.4rem;">本 科：<strong> 北京语言大学 </strong>翻译（本地化）</p>
-        <p><strong>💼实习：</strong>先后于<strong>小米、语智云帆、滴滴</strong>实习，负责<strong>术语库搭建</strong>、<strong>本地化项目管理</strong>、<strong>机器翻译评测</strong>相关业务工作</p>
-        <p><strong>🛠技能：</strong><strong>翻译全流程管理</strong>，<strong>AIGC媒体内容创作</strong>，基础后端开发实践</p>
-        <p><strong>🎤综合：</strong>拥有<strong>大型活动主持、国际志愿翻译、晚会导演组</strong>经历，擅长<strong>跨团队沟通</strong>与<strong>公开表达</strong></p>
+        <p><strong data-i18n="hero.edu">🎓学历：</strong></p>
+        <p style="padding-left:1.4rem;" data-i18n-html="hero.grad">研究生：<strong>中国传媒大学</strong> 英语笔译（影视翻译方向 · 保研）</p>
+        <p style="padding-left:1.4rem;" data-i18n-html="hero.ug">本 科：<strong> 北京语言大学 </strong>翻译（本地化）</p>
+        <p data-i18n-html="hero.intern">💼实习：先后于<strong>小米、语智云帆、滴滴</strong>实习，负责<strong>术语库搭建</strong>、<strong>本地化项目管理</strong>、<strong>机器翻译评测</strong>相关业务工作</p>
+        <p data-i18n-html="hero.skill">🛠技能：<strong>翻译全流程管理</strong>，<strong>AIGC媒体内容创作</strong>，基础后端开发实践</p>
+        <p data-i18n-html="hero.host">🎤综合：拥有<strong>大型活动主持、国际志愿翻译、晚会导演组</strong>经历，擅长<strong>跨团队沟通</strong>与<strong>公开表达</strong></p>
     </div>
     <!--核心数据高亮块-->
     <div class="data-highlight-row">
         <div class="data-item">
             <div class="data-num">100</div>
-            <div class="data-desc">小米汽车双语术语优化校验</div>
+            <div class="data-desc" data-i18n="data.terms">小米汽车双语术语优化校验</div>
         </div>
         <div class="data-item">
             <div class="data-num">500+</div>
-            <div class="data-desc">大模型译文评测任务</div>
+            <div class="data-desc" data-i18n="data.mt">大模型译文评测任务</div>
         </div>
         <div class="data-item">
             <div class="data-num">260+</div>
-            <div class="data-desc">多语言本地化需求处理</div>
+            <div class="data-desc" data-i18n="data.lpm">多语言本地化需求处理</div>
         </div>
         <div class="data-item">
             <div class="data-num">10</div>
-            <div class="data-desc">覆盖语种数量</div>
+            <div class="data-desc" data-i18n="data.langs">覆盖语种数量</div>
         </div>
     </div>
 </section>
         <!--教育背景：两个界面都有-->
         <section id="edu" class="content-block">
-            <h2 class="block-title">教育背景</h2>
+            <h2 class="block-title" data-i18n="sec.edu">教育背景</h2>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">中国传媒大学</div>
-                    <div class="item-time">2026.09‑至今｜保研</div>
+                    <div class="item-org" data-i18n="edu.cuc">中国传媒大学</div>
+                    <div class="item-time" data-i18n="edu.cucTime">2026.09‑至今｜保研</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>专业：</strong>英语笔译（影视翻译方向）</p>
-                    <p><strong>核心课程：</strong>国产影视剧英译、交替传译、智能翻译与AI应用、基于AIGC的智能媒体内容创作</p>
+                    <p data-i18n-html="edu.cucMajor"><strong>专业：</strong>英语笔译（影视翻译方向）</p>
+                    <p data-i18n-html="edu.cucCourses"><strong>核心课程：</strong>国产影视剧英译、交替传译、智能翻译与AI应用、基于AIGC的智能媒体内容创作</p>
                 </div>
             </div>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">北京语言大学</div>
-                    <div class="item-time">2022.09‑2026.06</div>
+                    <div class="item-org" data-i18n="edu.blcu">北京语言大学</div>
+                    <div class="item-time" data-i18n="edu.blcuTime">2022.09‑2026.06</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>专业：</strong>翻译（本地化）专业｜GPA：3.73/4 &nbsp; 专业排名：2 / 25</p>
-                    <p><strong>核心课程：</strong>本地化行业入门、内容管理系统设计与开发、高级编程、语料库语言学入门、计算机辅助翻译</p>
+                    <p data-i18n-html="edu.blcuMajor"><strong>专业：</strong>翻译（本地化）专业｜GPA：3.73/4 &nbsp; 专业排名：2 / 25</p>
+                    <p data-i18n-html="edu.blcuCourses"><strong>核心课程：</strong>本地化行业入门、内容管理系统设计与开发、高级编程、语料库语言学入门、计算机辅助翻译</p>
                 </div>
             </div>
         </section>
         <!--个人作品：主持版专属，独立醒目板块-->
         <section id="bilingual" class="content-block host-sec" style="display:none;">
-            <h2 class="block-title">个人作品</h2>
+            <h2 class="block-title" data-i18n="sec.works">个人作品</h2>
             <div class="block-item">
-                <p><strong>首钢园对外传播纪实 · 出镜主持</strong></p>
+                <p><strong data-i18n="works.shougang">首钢园对外传播纪实 · 出镜主持</strong></p>
                 <p><strong>When Industrial Ruins Meet Market Vibes 当工业遗迹遇见市集烟火</strong></p>
                 <div style="margin-top:16px;">
-                    <p><strong>作品：</strong></p>
+                    <p><strong data-i18n="works.video">作品：</strong></p>
                     <div style="max-width:600px;margin-left:auto;margin-right:auto;">
                         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
                             <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
@@ -146,7 +146,7 @@
                 </div>
 
                 <div style="margin-top:28px;">
-                    <p><strong>第26届齐越节报送作品——唐诗里的中国：</strong></p>
+                    <p><strong data-i18n="works.qiyue">第26届齐越节报送作品——唐诗里的中国：</strong></p>
 <br>
                     <div style="max-width:600px;margin-left:auto;margin-right:auto;">
                         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
@@ -160,88 +160,88 @@
         </section>
         <!--求职版：实习经历-->
         <section id="intern" class="content-block job-sec">
-            <h2 class="block-title">实习与项目经历</h2>
+            <h2 class="block-title" data-i18n="sec.intern">实习与项目经历</h2>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">科大讯飞股份有限公司｜字幕翻译质量评测项目</div>
+                    <div class="item-org" data-i18n-html="intern.iflytek">科大讯飞股份有限公司｜字幕翻译质量评测项目</div>
                     <div class="item-time">2026.10</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>项目职责：</strong>字幕翻译质量评测</p>
+                    <p data-i18n-html="intern.iflytekRole"><strong>项目职责：</strong>字幕翻译质量评测</p>
                     <ul>
-                        <li><strong>质量评定：</strong>按节目类型选用对应评分量表，从逻辑与攻防、语气与神态、时间同步、术语与身份、空间与可读性五个维度逐意群打分定级，以0.5分为颗粒度区分档。</li>
-                        <li><strong>原文校订：</strong>以自建 Whisper 中英双语 SRT 为参照基线，逐句复核 ASR 识别结果，订正漏词、错词、数字及专有名词误识，为下游机翻质量判断提供准确底稿。</li>
-                        <li><strong>术语与一致性：</strong>梳理片中专有名词、机构名与行业术语的译法，添加术语备注80条，排查同一概念前后译法不一致的问题。</li>
-                        <li><strong>项目成果：</strong>完成两批共744条字幕、273个意群评价单元的评测，覆盖2类节目，产出问题批注89条，为字幕翻译质量优化提供数据支撑。</li>
+                        <li data-i18n-html="intern.iflytek1"><strong>质量评定：</strong>按节目类型选用对应评分量表，从五个维度逐意群打分定级，以0.5分为颗粒度区分档。</li>
+                        <li data-i18n-html="intern.iflytek2"><strong>原文校订：</strong>以自建 Whisper 中英双语 SRT 为参照基线，订正漏词、错词、数字及专有名词误识。</li>
+                        <li data-i18n-html="intern.iflytek3"><strong>术语与一致性：</strong>梳理片中专有名词与术语译法，添加术语备注80条。</li>
+                        <li data-i18n-html="intern.iflytek4"><strong>项目成果：</strong>完成744条字幕、273个意群单元评测，产出问题批注89条。</li>
                     </ul>
                 </div>
             </div>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">北京嘀嘀无限科技发展有限公司</div>
+                    <div class="item-org" data-i18n-html="intern.didi">北京嘀嘀无限科技发展有限公司</div>
                     <div class="item-time">2025.06‑2025.11</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>岗位：LPM本地化项目管理</strong></p>
+                    <p data-i18n-html="intern.didiRole"><strong>岗位：</strong>LPM本地化项目管理</p>
                     <ul>
-                        <li>翻译流程把控，协调语言专家、供应商推进项目，跟进从需求提报至交付全闭环；</li>
-                        <li>协同解决翻译疑问，对接法务审核，处理线下特殊需求，补全线上流程盲区；</li>
-                        <li><strong>工作成果：</strong>累计处理多语言本地化需求超260条，覆盖10种语言，保障5条产线需求落地。</li>
+                        <li data-i18n-html="intern.didi1">翻译流程把控，协调语言专家与供应商，跟进需求从提报到交付全闭环；</li>
+                        <li data-i18n-html="intern.didi2">协同解决翻译疑问，对接法务审核，处理线下特殊需求；</li>
+                        <li data-i18n-html="intern.didi3"><strong>工作成果：</strong>处理多语言本地化需求超260条，覆盖10种语言，保障5条产线落地。</li>
                     </ul>
                 </div>
             </div>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">北京语言大学党委宣传部</div>
+                    <div class="item-org" data-i18n-html="intern.blcu">北京语言大学党委宣传部</div>
                     <div class="item-time">2025.02‑2025.05</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>岗位：</strong>校园新闻与内容管理</p>
+                    <p data-i18n-html="intern.blcuRole"><strong>岗位：</strong>校园新闻与内容管理</p>
                     <ul>
-                        <li>新闻素材整理、内容编辑审核；承担学校大型会议记录，提炼会议核心摘要。</li>
+                        <li data-i18n-html="intern.blcu1">新闻素材整理、内容编辑审核；承担学校大型会议记录，提炼核心摘要。</li>
                     </ul>
                 </div>
             </div>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">北京语智云帆科技有限公司｜机器翻译质量评测</div>
+                    <div class="item-org" data-i18n-html="intern.lingosail">北京语智云帆科技有限公司｜机器翻译质量评测</div>
                     <div class="item-time">2024.06</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>岗位：中英双语机器翻译质量评测</strong></p>
+                    <p data-i18n-html="intern.lingosailRole"><strong>岗位：</strong>中英双语机器翻译质量评测</p>
                     <ul>
-                        <li>参照评测标准，从语法、语义、专业术语多维度对译文打分定级；</li>
-                        <li><strong>项目成果：</strong>完成500条大模型译文评分任务，为翻译模型迭代提供数据支撑。</li>
+                        <li data-i18n-html="intern.lingosail1">参照评测标准，从语法、语义、专业术语多维度对译文打分定级；</li>
+                        <li data-i18n-html="intern.lingosail2"><strong>项目成果：</strong>完成500条大模型译文评分任务。</li>
                     </ul>
                 </div>
             </div>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">北京小米移动软件有限公司</div>
+                    <div class="item-org" data-i18n-html="intern.xiaomi">北京小米移动软件有限公司</div>
                     <div class="item-time">2024.03‑2024.06</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>岗位：术语管理与内容优化</strong></p>
+                    <p data-i18n-html="intern.xiaomiRole"><strong>岗位：</strong>术语管理与内容优化</p>
                     <ul>
-                        <li>参与小米汽车术语库搭建，整合行业资料、技术文档完成术语沉淀；</li>
-                        <li>优化小米汽车双语术语，修正翻译误差与歧义，提升表述一致性；</li>
-                        <li>遵循风格指南撰写标准化术语定义、解释与示例；</li>
-                        <li><strong>工作成果：</strong>独立完成100对双语术语的优化、撰写、校验，支撑小米汽车术语库建设。</li>
+                        <li data-i18n-html="intern.xiaomi1">参与小米汽车术语库搭建，整合行业资料与技术文档完成术语沉淀；</li>
+                        <li data-i18n-html="intern.xiaomi2">优化小米汽车双语术语，修正翻译误差与歧义，提升一致性；</li>
+                        <li data-i18n-html="intern.xiaomi3">遵循风格指南撰写标准化术语定义、解释与示例；</li>
+                        <li data-i18n-html="intern.xiaomi4"><strong>工作成果：</strong>独立完成100对双语术语的优化、撰写与校验。</li>
                     </ul>
                 </div>
             </div>
         </section>
         <!--求职版：项目竞赛-->
         <section id="project" class="content-block job-sec">
-            <h2 class="block-title">作品与竞赛</h2>
+            <h2 class="block-title" data-i18n="sec.project">作品与竞赛</h2>
             <!-- 双语出镜作品（求职版也展示一份，与主持版独立板块呼应） -->
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">首钢园对外传播纪实｜双语出镜主持（作品）</div>
+                    <div class="item-org" data-i18n="proj.shougang">首钢园对外传播纪实｜双语出镜主持（作品）</div>
                     <div class="item-time">2026</div>
                 </div>
                     <div style="margin-top:16px;">
-                        <p><strong>作品：</strong></p>
+                        <p><strong data-i18n="works.video">作品：</strong></p>
                         <div style="max-width:600px;margin-left:auto;margin-right:auto;">
                             <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
                                 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
@@ -254,19 +254,19 @@
 <br><br>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">语言服务创新创业大赛｜全国三等奖 (大二作品)</div>
+                    <div class="item-org" data-i18n="proj.huxiaoli">语言服务创新创业大赛｜全国三等奖</div>
                     <div class="item-time">2024</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>项目名称：</strong>狐小狸心工坊——“AI+心理”大学生心理问答平台</p>
-                    <p><strong>个人职责：</strong>全栈开发与AI技术集成</p>
+                    <p data-i18n-html="proj.huxiaoliName"><strong>项目名称：</strong>狐小狸心工坊——"AI+心理"大学生心理问答平台</p>
+                    <p data-i18n-html="proj.huxiaoliRole"><strong>个人职责：</strong>全栈开发与AI技术集成</p>
                     <ul>
-                        <li>集成百度云AipSpeech，完成语音识别、语音合成交互模块；</li>
-                        <li>基于FastAPI搭建后端服务，设计标准化API接口；</li>
-                        <li>SQL完成数据库架构设计，执行复杂查询优化。</li>
+                        <li data-i18n="proj.huxiaoli1">集成百度云 AipSpeech，完成语音识别与合成模块；</li>
+                        <li data-i18n="proj.huxiaoli2">基于 FastAPI 搭建后端服务，设计标准化 API；</li>
+                        <li data-i18n="proj.huxiaoli3">用 SQL 完成数据库架构设计与查询优化。</li>
                     </ul>
                     <div style="margin-top:16px;">
-                        <p><strong>项目演示视频：</strong></p>
+                        <p><strong data-i18n="proj.demo">项目演示视频：</strong></p>
                         <div style="max-width:600px;margin-left:auto;margin-right:auto;">
                             <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
                                 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
@@ -279,20 +279,20 @@
 <br><br>
             <div class="block-item">
                 <div class="item-head">
-                    <div class="item-org">第18届中国大学生计算机设计大赛（人工智能应用组）| 北京市三等奖（大三作品）</div>
+                    <div class="item-org" data-i18n="proj.hanbian">第18届中国大学生计算机设计大赛｜北京市三等奖</div>
                     <div class="item-time">2025</div>
                 </div>
                 <div class="item-detail">
-                    <p><strong>项目名称：</strong>汉边邻典汇——两汉国名与民族名智能检索平台</p>
-                    <p><strong>个人职责：</strong>全栈开发与数字人文专题检索系统搭建</p>
+                    <p data-i18n-html="proj.hanbianName"><strong>项目名称：</strong>汉边邻典汇——两汉国名与民族名智能检索平台</p>
+                    <p data-i18n-html="proj.hanbianRole"><strong>个人职责：</strong>全栈开发与数字人文检索系统搭建</p>
                     <ul>
-                        <li>基于原生HTML/CSS/JavaScript开发前端页面，实现词条实时筛选、拼音展示与交互界面；</li>
-                        <li>使用PHP+MySQL搭建后端，完成两汉国名民族名专题数据库设计、数据标准化与检索查询优化；</li>
-                        <li>集成智谱GLM-4-Flash大模型API，编写提示词模板，实现智能问答与关键词推荐；</li>
-                        <li>基于编辑距离算法开发模糊检索，完成系统功能、性能、兼容性测试与性能调优。</li>
+                        <li data-i18n="proj.hanbian1">原生 HTML/CSS/JS 开发前端，实现词条实时筛选与交互；</li>
+                        <li data-i18n="proj.hanbian2">PHP+MySQL 搭建后端，完成专题数据库设计与检索优化；</li>
+                        <li data-i18n="proj.hanbian3">集成智谱 GLM-4 大模型 API，实现智能问答与关键词推荐；</li>
+                        <li data-i18n="proj.hanbian4">基于编辑距离开发模糊检索，完成功能与性能调优。</li>
                     </ul>
                     <div style="margin-top:16px;">
-                        <p><strong>项目演示视频：</strong></p>
+                        <p><strong data-i18n="proj.demo">项目演示视频：</strong></p>
                         <div style="max-width:600px;margin-left:auto;margin-right:auto;">
                             <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
                                 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
@@ -307,15 +307,15 @@
         </section>
         <!--主持版：主持实践-->
         <section id="social" class="content-block host-sec" style="display:none;">
-            <h2 class="block-title">主持经历 & 大型社会实践</h2>
+            <h2 class="block-title" data-i18n="sec.social">主持经历 & 大型社会实践</h2>
             <div class="block-item">
                 <div class="item-detail">
-                    <p><strong>主持经历：</strong></p>
+                    <p><strong data-i18n="social.host">主持经历：</strong></p>
                     <ul>
-                        <li>连续四年主持美育中国说·国际语言艺术大会全国总展示、阅读伴我行全国总展示</li>
-                        <li>北京语言大学读书节开幕式、DRAMA NIGHT戏剧之夜、致敬科技工作者文艺晚会</li>
-                        <li>第十七届（2026）北京市大学生英语演讲比赛中国传媒大学校园选拔赛</li>
-                        <li>共计主持校内外活动超20场</li>
+                        <li data-i18n="social.host1">连续四年主持美育中国说·国际语言艺术大会、阅读伴我行全国总展示</li>
+                        <li data-i18n="social.host2">北京语言大学读书节开幕式、DRAMA NIGHT戏剧之夜、致敬科技工作者文艺晚会</li>
+                        <li data-i18n="social.host3">第十七届（2026）北京市大学生英语演讲比赛中国传媒大学校园选拔赛</li>
+                        <li data-i18n="social.host4">共计主持校内外活动超20场</li>
                     </ul>
                 <!--主持照片轮播-->
                     <div class="carousel-wrap" id="carouselHost">
@@ -331,7 +331,7 @@
                     </div>
 <br>
                     <div style="margin-top:16px;">
-                        <p><strong>主持片段：</strong></p>
+                        <p><strong data-i18n="social.clip">主持片段：</strong></p>
                         <div style="max-width:600px;margin-left:auto;margin-right:auto;">
                             <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;">
                                 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
@@ -340,14 +340,14 @@
                             </div>
                         </div>
                     </div>
-                    <p style="margin-top:28px;"><strong>社会实践 / 导演组 / 志愿翻译：</strong></p>
+                    <p style="margin-top:28px;"><strong data-i18n="social.practice">社会实践 / 导演组 / 志愿翻译：</strong></p>
                     <ul>
-                        <li>CGTN“一带一路十周年特别节目”中国学生代表</li>
-                        <li>中美大学生夏季交流营（北京语言大学&美国贝尔蒙特大学）陪同翻译</li>
-                        <li>CNTV央视频 大国非遗·文旅九州导演组</li>
-                        <li>《盛世华章 初心如炬》纪念长征胜利90周年文艺晚会导演组</li>
-                        <li>国家大剧院、北京京仪集团等多台文艺晚会导演组</li>
-                        <li>博鳌亚洲论坛全球健康论坛英语志愿者；世界机器人大会志愿者</li>
+                        <li data-i18n="social.prac1">CGTN"一带一路十周年特别节目"中国学生代表</li>
+                        <li data-i18n="social.prac2">中美大学生夏季交流营（北语 & 美国贝尔蒙特大学）陪同翻译</li>
+                        <li data-i18n="social.prac3">CNTV央视频 大国非遗·文旅九州 导演组</li>
+                        <li data-i18n="social.prac4">《盛世华章 初心如炬》纪念长征胜利90周年文艺晚会 导演组</li>
+                        <li data-i18n="social.prac5">国家大剧院、北京京仪集团等多台文艺晚会 导演组</li>
+                        <li data-i18n="social.prac6">博鳌亚洲论坛全球健康论坛英语志愿者；世界机器人大会志愿者</li>
                     </ul>
                     <!--社会实践照片轮播-->
                     <div class="carousel-wrap" id="carouselSocial">
@@ -367,50 +367,50 @@
         </section>
         <!--荣誉奖项：两个界面都有（内容按界面区分）-->
         <section id="award" class="content-block">
-            <h2 class="block-title">荣誉奖项</h2>
+            <h2 class="block-title" data-i18n="sec.award">荣誉奖项</h2>
             <!-- 求职版 -->
             <div class="block-item job-sec">
                 <ul class="award-list">
-                    <li>北京市优秀毕业生</li>
-                    <li>北京市海淀区二星级志愿者</li>
-                    <li>中国传媒大学一等奖奖学金</li>
-                    <li>北京语言大学一等奖学金</li>
-                    <li>北京语言大学英语和高级翻译学院“海星优才”奖学金</li>
-                    <li>2026第十八届“板桥杯”青年翻译竟赛全国一等奖</li>
-                    <li>2025第十八届中国大学生计算机设计大赛北京市二等奖</li>
-                    <li>2025年全国编译大赛全国三等奖</li>
-                    <li>2024“外研社·国才杯”英语综合能力北京赛区铜奖</li>
-                    <li>2024语言服务创新创业大赛全国三等奖</li>
-                    <li>第六届中华经典诵写讲大赛北京语言大学一等奖</li>
-                    <li>北京语言大学“校级优秀团干部”</li>
+                    <li data-i18n="aw.j1">北京市优秀毕业生</li>
+                    <li data-i18n="aw.j2">北京市海淀区二星级志愿者</li>
+                    <li data-i18n="aw.j3">中国传媒大学一等奖奖学金</li>
+                    <li data-i18n="aw.j4">北京语言大学一等奖学金</li>
+                    <li data-i18n="aw.j5">北语英语与高级翻译学院"海星优才"奖学金</li>
+                    <li data-i18n="aw.j6">2026 第十八届"板桥杯"青年翻译竞赛全国一等奖</li>
+                    <li data-i18n="aw.j7">2025 中国大学生计算机设计大赛北京市二等奖</li>
+                    <li data-i18n="aw.j8">2025 全国编译大赛全国三等奖</li>
+                    <li data-i18n="aw.j9">2024"外研社·国才杯"英语综合能力北京赛区铜奖</li>
+                    <li data-i18n="aw.j10">2024 语言服务创新创业大赛全国三等奖</li>
+                    <li data-i18n="aw.j11">第六届中华经典诵写讲大赛 北语一等奖</li>
+                    <li data-i18n="aw.j12">北京语言大学校级优秀团干部</li>
                 </ul>
             </div>
             <!-- 主持版 -->
             <div class="block-item host-sec" style="display:none;">
                 <ul class="award-list">
-                    <li>北京市优秀毕业生</li>
-                    <li>中国传媒大学一等奖奖学金</li>
-                    <li>北京语言大学一等奖学金</li>
-                    <li>北京语言大学英语和高级翻译学院“海星优才”奖学金</li>
-                    <li>第六届中华经典诵写讲大赛北京语言大学一等奖</li>
-                    <li>2026.04 “一路有你”公益行爱心大使</li>
+                    <li data-i18n="aw.h1">北京市优秀毕业生</li>
+                    <li data-i18n="aw.h3">中国传媒大学一等奖奖学金</li>
+                    <li data-i18n="aw.h4">北京语言大学一等奖学金</li>
+                    <li data-i18n="aw.h5">北语英语与高级翻译学院"海星优才"奖学金</li>
+                    <li data-i18n="aw.h11">第六届中华经典诵写讲大赛 北语一等奖</li>
+                    <li data-i18n="aw.h6">2026.04"一路有你"公益行爱心大使</li>
                 </ul>
             </div>
         </section>
         <!--专业技能：两个界面都有（内容按界面区分）-->
         <section id="skill" class="content-block">
-            <h2 class="block-title">专业技能</h2>
+            <h2 class="block-title" data-i18n="sec.skill">专业技能</h2>
             <!-- 求职版：完整版 -->
             <div class="block-item job-sec">
-                <p><strong>语言能力：</strong>CATTI三级笔译、TEM‑8、TEM‑4良好、CET‑6（564）、普通话一级乙等</p>
-                <p><strong>翻译本地化工具：</strong>Phrase(CMS)、Trados、MemoQ、AntConc</p>
-                <p><strong>开发与AI：</strong>HTML、Cursor、FastAPI、SQL、AIGC智能媒体创作</p>
-                <p><strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套</p>
+                <p data-i18n-html="skill.j1"><strong>语言能力：</strong>CATTI三级笔译、TEM‑8、TEM‑4良好、CET‑6（564）、普通话一级乙等</p>
+                <p data-i18n-html="skill.j2"><strong>翻译本地化工具：</strong>Phrase(CMS)、Trados、MemoQ、AntConc</p>
+                <p data-i18n-html="skill.j3"><strong>开发与AI：</strong>HTML、Cursor、FastAPI、SQL、AIGC智能媒体创作</p>
+                <p data-i18n-html="skill.j4"><strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套</p>
             </div>
             <!-- 主持版：精简版 -->
             <div class="block-item host-sec" style="display:none;">
-                <p><strong>语言能力：</strong>六级564、专八证书、普通话一级乙等</p>
-                <p><strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套</p>
+                <p data-i18n-html="skill.h1"><strong>语言能力：</strong>六级564、专八证书、普通话一级乙等</p>
+                <p data-i18n-html="skill.h2"><strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套</p>
             </div>
         </section>
     </main>
@@ -418,16 +418,241 @@
 <footer class="site-footer">
     <!-- 一键发送邮件按钮 -->
     <div style="text-align:center;margin-bottom:14px;">
-        <p style="margin-bottom:8px;color:#555;">欢迎随时联系我</p>
+        <p style="margin-bottom:8px;color:#555;" data-i18n="foot.hello">欢迎随时联系我</p>
         <a href="mailto:zhaozhenghee@163.com?subject="
-           style="display:inline-block;background:#0052cc;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;">
+           style="display:inline-block;background:#0052cc;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;" data-i18n="foot.mail">
            📧 一键发送邮件给我
         </a>
     </div>
-    ©2026 赵政赫｜个人求职简历网站，仅供求职使用
+    <div data-i18n="foot.copy">©2026 赵政赫｜个人求职简历网站，仅供求职使用</div>
 </footer>
-<!--轮播 + 双界面切换 JS-->
+
 <script>
+// ===== 双语字典 =====
+const I18N = {
+  zh: {
+    "nav.edu":"教育背景","nav.works":"个人作品","nav.intern":"实习与项目","nav.project":"作品与竞赛",
+    "nav.social":"主持&实践","nav.award":"荣誉奖项","nav.skill":"专业技能","nav.dl":"下载简历 ▾",
+    "nav.dlZh":"📄 中文简历","nav.dlEn":"📄 英文简历","nav.dlHostZh":"Media_CH","nav.dlHostEn":"Media_EN",
+    "nav.toHost":"🎤 切换为主持版","nav.toJob":"💼 切换为求职版",
+    "side.basic":"基本信息","side.born":"出生年月","side.party":"政治面貌","side.partyVal":"中共党员",
+    "side.loc":"居住地","side.locVal":"北京市","side.email":"邮箱","side.tel":"电话","side.certs":"证书&技能标签",
+    "tag.catti":"CATTI三级笔译","tag.tem8":"专八","tag.mandarin":"普通话一级乙等","tag.teacher":"高中英语教师资格证",
+    "hero.name":"赵政赫","hero.edu":"🎓学历：",
+    "hero.grad":"研究生：<strong>中国传媒大学</strong> 英语笔译（影视翻译方向 · 保研）",
+    "hero.ug":"本 科：<strong> 北京语言大学 </strong>翻译（本地化）",
+    "hero.intern":"💼实习：先后于<strong>小米、语智云帆、滴滴</strong>实习，负责<strong>术语库搭建</strong>、<strong>本地化项目管理</strong>、<strong>机器翻译评测</strong>相关业务工作",
+    "hero.skill":"🛠技能：<strong>翻译全流程管理</strong>，<strong>AIGC媒体内容创作</strong>，基础后端开发实践",
+    "hero.host":"🎤综合：拥有<strong>大型活动主持、国际志愿翻译、晚会导演组</strong>经历，擅长<strong>跨团队沟通</strong>与<strong>公开表达</strong>",
+    "data.terms":"小米汽车双语术语优化校验","data.mt":"大模型译文评测任务","data.lpm":"多语言本地化需求处理","data.langs":"覆盖语种数量",
+    "sec.edu":"教育背景","edu.cuc":"中国传媒大学","edu.cucTime":"2026.09‑至今｜保研",
+    "edu.cucMajor":"<strong>专业：</strong>英语笔译（影视翻译方向）",
+    "edu.cucCourses":"<strong>核心课程：</strong>国产影视剧英译、交替传译、智能翻译与AI应用、基于AIGC的智能媒体内容创作",
+    "edu.blcu":"北京语言大学","edu.blcuTime":"2022.09‑2026.06",
+    "edu.blcuMajor":"<strong>专业：</strong>翻译（本地化）专业｜GPA：3.73/4 &nbsp; 专业排名：2 / 25",
+    "edu.blcuCourses":"<strong>核心课程：</strong>本地化行业入门、内容管理系统设计与开发、高级编程、语料库语言学入门、计算机辅助翻译",
+    "sec.works":"个人作品","works.shougang":"首钢园对外传播纪实 · 出镜主持","works.video":"作品：",
+    "works.qiyue":"第26届齐越节报送作品——唐诗里的中国：",
+    "sec.intern":"实习与项目经历","intern.iflytek":"科大讯飞股份有限公司｜字幕翻译质量评测项目",
+    "intern.iflytekRole":"<strong>项目职责：</strong>字幕翻译质量评测",
+    "intern.iflytek1":"<strong>质量评定：</strong>按节目类型选用对应评分量表，从五个维度逐意群打分定级，以0.5分为颗粒度区分档。",
+    "intern.iflytek2":"<strong>原文校订：</strong>以自建 Whisper 中英双语 SRT 为参照基线，订正漏词、错词、数字及专有名词误识。",
+    "intern.iflytek3":"<strong>术语与一致性：</strong>梳理片中专有名词与术语译法，添加术语备注80条。",
+    "intern.iflytek4":"<strong>项目成果：</strong>完成744条字幕、273个意群单元评测，产出问题批注89条。",
+    "intern.didi":"北京嘀嘀无限科技发展有限公司","intern.didiRole":"<strong>岗位：</strong>LPM本地化项目管理",
+    "intern.didi1":"翻译流程把控，协调语言专家与供应商，跟进需求从提报到交付全闭环；",
+    "intern.didi2":"协同解决翻译疑问，对接法务审核，处理线下特殊需求；",
+    "intern.didi3":"<strong>工作成果：</strong>处理多语言本地化需求超260条，覆盖10种语言，保障5条产线落地。",
+    "intern.blcu":"北京语言大学党委宣传部","intern.blcuRole":"<strong>岗位：</strong>校园新闻与内容管理",
+    "intern.blcu1":"新闻素材整理、内容编辑审核；承担学校大型会议记录，提炼核心摘要。",
+    "intern.lingosail":"北京语智云帆科技有限公司｜机器翻译质量评测","intern.lingosailRole":"<strong>岗位：</strong>中英双语机器翻译质量评测",
+    "intern.lingosail1":"参照评测标准，从语法、语义、专业术语多维度对译文打分定级；",
+    "intern.lingosail2":"<strong>项目成果：</strong>完成500条大模型译文评分任务。",
+    "intern.xiaomi":"北京小米移动软件有限公司","intern.xiaomiRole":"<strong>岗位：</strong>术语管理与内容优化",
+    "intern.xiaomi1":"参与小米汽车术语库搭建，整合行业资料与技术文档完成术语沉淀；",
+    "intern.xiaomi2":"优化小米汽车双语术语，修正翻译误差与歧义，提升一致性；",
+    "intern.xiaomi3":"遵循风格指南撰写标准化术语定义、解释与示例；",
+    "intern.xiaomi4":"<strong>工作成果：</strong>独立完成100对双语术语的优化、撰写与校验。",
+    "sec.project":"作品与竞赛","proj.shougang":"首钢园对外传播纪实｜双语出镜主持（作品）",
+    "proj.huxiaoli":"语言服务创新创业大赛｜全国三等奖",
+    "proj.huxiaoliName":"<strong>项目名称：</strong>狐小狸心工坊——“AI+心理”大学生心理问答平台",
+    "proj.huxiaoliRole":"<strong>个人职责：</strong>全栈开发与AI技术集成",
+    "proj.huxiaoli1":"集成百度云 AipSpeech，完成语音识别与合成模块；",
+    "proj.huxiaoli2":"基于 FastAPI 搭建后端服务，设计标准化 API；",
+    "proj.huxiaoli3":"用 SQL 完成数据库架构设计与查询优化。",
+    "proj.demo":"项目演示视频：",
+    "proj.hanbian":"第18届中国大学生计算机设计大赛｜北京市三等奖",
+    "proj.hanbianName":"<strong>项目名称：</strong>汉边邻典汇——两汉国名与民族名智能检索平台",
+    "proj.hanbianRole":"<strong>个人职责：</strong>全栈开发与数字人文检索系统搭建",
+    "proj.hanbian1":"原生 HTML/CSS/JS 开发前端，实现词条实时筛选与交互；",
+    "proj.hanbian2":"PHP+MySQL 搭建后端，完成专题数据库设计与检索优化；",
+    "proj.hanbian3":"集成智谱 GLM-4 大模型 API，实现智能问答与关键词推荐；",
+    "proj.hanbian4":"基于编辑距离开发模糊检索，完成功能与性能调优。",
+    "sec.social":"主持经历 & 大型社会实践","social.host":"主持经历：",
+    "social.host1":"连续四年主持美育中国说·国际语言艺术大会、阅读伴我行全国总展示",
+    "social.host2":"北京语言大学读书节开幕式、DRAMA NIGHT戏剧之夜、致敬科技工作者文艺晚会",
+    "social.host3":"第十七届（2026）北京市大学生英语演讲比赛中国传媒大学校园选拔赛",
+    "social.host4":"共计主持校内外活动超20场","social.clip":"主持片段：",
+    "social.practice":"社会实践 / 导演组 / 志愿翻译：",
+    "social.prac1":"CGTN“一带一路十周年特别节目”中国学生代表",
+    "social.prac2":"中美大学生夏季交流营（北语 & 美国贝尔蒙特大学）陪同翻译",
+    "social.prac3":"CNTV央视频 大国非遗·文旅九州 导演组",
+    "social.prac4":"《盛世华章 初心如炬》纪念长征胜利90周年文艺晚会 导演组",
+    "social.prac5":"国家大剧院、北京京仪集团等多台文艺晚会 导演组",
+    "social.prac6":"博鳌亚洲论坛全球健康论坛英语志愿者；世界机器人大会志愿者",
+    "sec.award":"荣誉奖项",
+    "aw.j1":"北京市优秀毕业生","aw.j2":"北京市海淀区二星级志愿者","aw.j3":"中国传媒大学一等奖奖学金",
+    "aw.j4":"北京语言大学一等奖学金","aw.j5":"北语英语与高级翻译学院“海星优才”奖学金",
+    "aw.j6":"2026 第十八届“板桥杯”青年翻译竞赛全国一等奖","aw.j7":"2025 中国大学生计算机设计大赛北京市二等奖",
+    "aw.j8":"2025 全国编译大赛全国三等奖","aw.j9":"2024“外研社·国才杯”英语综合能力北京赛区铜奖",
+    "aw.j10":"2024 语言服务创新创业大赛全国三等奖","aw.j11":"第六届中华经典诵写讲大赛 北语一等奖",
+    "aw.j12":"北京语言大学校级优秀团干部",
+    "aw.h1":"北京市优秀毕业生","aw.h3":"中国传媒大学一等奖奖学金","aw.h4":"北京语言大学一等奖学金",
+    "aw.h5":"北语英语与高级翻译学院“海星优才”奖学金","aw.h11":"第六届中华经典诵写讲大赛 北语一等奖",
+    "aw.h6":"2026.04“一路有你”公益行爱心大使",
+    "sec.skill":"专业技能",
+    "skill.j1":"<strong>语言能力：</strong>CATTI三级笔译、TEM‑8、TEM‑4良好、CET‑6（564）、普通话一级乙等",
+    "skill.j2":"<strong>翻译本地化工具：</strong>Phrase(CMS)、Trados、MemoQ、AntConc",
+    "skill.j3":"<strong>开发与AI：</strong>HTML、Cursor、FastAPI、SQL、AIGC智能媒体创作",
+    "skill.j4":"<strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套",
+    "skill.h1":"<strong>语言能力：</strong>六级564、专八证书、普通话一级乙等",
+    "skill.h2":"<strong>多媒体办公：</strong>Capcut剪映、Microsoft Office全套",
+    "foot.hello":"欢迎随时联系我","foot.mail":"📧 一键发送邮件给我","foot.copy":"©2026 赵政赫｜个人求职简历网站，仅供求职使用"
+  },
+  en: {
+    "nav.edu":"Education","nav.works":"Portfolio","nav.intern":"Internship & Projects","nav.project":"Projects & Competitions",
+    "nav.social":"Hosting & Practice","nav.award":"Honors & Awards","nav.skill":"Skills","nav.dl":"Resume ▾",
+    "nav.dlZh":"📄 Chinese Resume","nav.dlEn":"📄 English Resume","nav.dlHostZh":"Media_CH","nav.dlHostEn":"Media_EN",
+    "nav.toHost":"🎤 Hosting Mode","nav.toJob":"💼 Job Mode",
+    "side.basic":"Basic Info","side.born":"Born","side.party":"Politics","side.partyVal":"Member of CPC",
+    "side.loc":"Location","side.locVal":"Beijing","side.email":"Email","side.tel":"Phone","side.certs":"Certs & Skills",
+    "tag.catti":"CATTI Level 3","tag.tem8":"TEM-8","tag.mandarin":"Mandarin L1-B","tag.teacher":"HS English Teacher Cert",
+    "hero.name":"Zhenghe Zhao","hero.edu":"🎓 Education:",
+    "hero.grad":"MA: <strong>Communication Univ. of China</strong>, MTI (Film & TV Translation, recommended)",
+    "hero.ug":"BA: <strong>Beijing Language & Culture Univ.</strong>, Translation (Localization)",
+    "hero.intern":"💼 <strong>Xiaomi, Lingosail, DiDi</strong> — terminology, localization PM, MT evaluation",
+    "hero.skill":"🛠 Translation workflow, <strong>AIGC media creation</strong>, basic backend dev",
+    "hero.host":"🎤 20+ events hosted, volunteer interpreter, gala director team; strong communication",
+    "data.terms":"Xiaomi Auto terms refined","data.mt":"MT evaluation tasks","data.lpm":"Localization requests","data.langs":"Languages covered",
+    "sec.edu":"Education","edu.cuc":"Communication University of China","edu.cucTime":"Sept. 2026 – Present | Recommended",
+    "edu.cucMajor":"<strong>Major:</strong> MTI (Film & TV Translation)",
+    "edu.cucCourses":"<strong>Core courses:</strong> Drama/film translation, interpreting, AI-assisted translation, AIGC media",
+    "edu.blcu":"Beijing Language and Culture University","edu.blcuTime":"Sept. 2022 – Jun. 2026",
+    "edu.blcuMajor":"<strong>Major:</strong> Translation (Localization) | GPA 3.73/4 | Rank 2/25",
+    "edu.blcuCourses":"<strong>Core courses:</strong> Localization, CMS design, programming, corpus linguistics, CAT",
+    "sec.works":"Portfolio","works.shougang":"Shougang Park Documentary · On-camera Host","works.video":"Watch:",
+    "works.qiyue":"26th Qiyue Festival — Tang Poetry: China:",
+    "sec.intern":"Internship & Projects",
+    "intern.iflytek":"iFlytek Co., Ltd. | Subtitle Translation QA",
+    "intern.iflytekRole":"<strong>Role:</strong> Subtitle Translation Quality Evaluation",
+    "intern.iflytek1":"<strong>Quality:</strong> Rated subtitles on 5 dimensions per genre rubric, granularity 0.5.",
+    "intern.iflytek2":"<strong>Proofreading:</strong> Verified ASR against a self-built Whisper CN-EN SRT.",
+    "intern.iflytek3":"<strong>Terminology:</strong> Compiled terms and added 80 term notes.",
+    "intern.iflytek4":"<strong>Results:</strong> 744 subtitles, 273 units rated; 89 issue comments.",
+    "intern.didi":"DiDi Global Inc.","intern.didiRole":"<strong>Role:</strong> Localization Project Manager (LPM)",
+    "intern.didi1":"Coordinated linguists and vendors; ran end-to-end delivery;",
+    "intern.didi2":"Resolved queries, coordinated legal reviews and offline requests;",
+    "intern.didi3":"<strong>Results:</strong> Handled 260+ localization requests across 10 languages, 5 product lines.",
+    "intern.blcu":"BLCU Publicity Office","intern.blcuRole":"<strong>Role:</strong> Campus News & Content",
+    "intern.blcu1":"Curated and edited university news; took minutes and wrote executive summaries.",
+    "intern.lingosail":"Lingosail | MT Quality Evaluation","intern.lingosailRole":"<strong>Role:</strong> Bilingual MT Quality Evaluation",
+    "intern.lingosail1":"Rated translations on grammar, semantics and terminology;",
+    "intern.lingosail2":"<strong>Results:</strong> Scored 500 AI-translated texts.",
+    "intern.xiaomi":"Xiaomi Corporation","intern.xiaomiRole":"<strong>Role:</strong> Terminology Management",
+    "intern.xiaomi1":"Built Xiaomi Auto term base from industry and technical docs;",
+    "intern.xiaomi2":"Refined bilingual terms, fixed errors and improved consistency;",
+    "intern.xiaomi3":"Wrote standard term definitions and examples per style guide;",
+    "intern.xiaomi4":"<strong>Results:</strong> Delivered 100 refined bilingual term pairs.",
+    "sec.project":"Projects & Competitions",
+    "proj.shougang":"Shougang Park Documentary | Bilingual On-camera Host",
+    "proj.huxiaoli":"Language Service Innovation Contest | National 3rd Prize",
+    "proj.huxiaoliName":"<strong>Project:</strong> Fox Psychology — AI mental-health Q&A platform",
+    "proj.huxiaoliRole":"<strong>Role:</strong> Full-stack & AI integration",
+    "proj.huxiaoli1":"Built speech recognition/synthesis with Baidu AipSpeech;",
+    "proj.huxiaoli2":"Built FastAPI backend with standardized APIs;",
+    "proj.huxiaoli3":"Designed SQL database and optimized queries.",
+    "proj.demo":"Demo Video:",
+    "proj.hanbian":"18th China Collegiate Computer Design Contest | Beijing 3rd Prize",
+    "proj.hanbianName":"<strong>Project:</strong> Han Ethnic Names Smart Retrieval Platform",
+    "proj.hanbianRole":"<strong>Role:</strong> Full-stack & digital humanities system",
+    "proj.hanbian1":"Built front-end with vanilla HTML/CSS/JS for live filtering;",
+    "proj.hanbian2":"Built PHP+MySQL backend for topic database and retrieval;",
+    "proj.hanbian3":"Integrated Zhipu GLM-4 API for Q&A and keyword suggestions;",
+    "proj.hanbian4":"Added edit-distance fuzzy search; tuned performance.",
+    "sec.social":"Hosting & Practice","social.host":"Hosting:",
+    "social.host1":"National finals of Aesthetic Education China & Reading With Me (4 yrs running)",
+    "social.host2":"BLCU Reading Festival, DRAMA NIGHT, Sci-Tech Workers Gala",
+    "social.host3":"17th (2026) Beijing College English Speech Contest, CUC selection",
+    "social.host4":"20+ events hosted on and off campus","social.clip":"Hosting Clip:",
+    "social.practice":"Practice / Director Team / Interpreter:",
+    "social.prac1":"CGTN Belt & Road 10th Anniversary — Chinese student representative",
+    "social.prac2":"China-US Summer Exchange Camp (BLCU & Belmont Univ.) — escort interpreter",
+    "social.prac3":"CNTV Grand Intangible Heritage · Cultural Tourism — director team",
+    "social.prac4":"Long March 90th Anniversary Gala — director team",
+    "social.prac5":"NCPA, Beijing Jingyi Group galas — director team",
+    "social.prac6":"Boao Global Health Forum & World Robot Conference — volunteer",
+    "sec.award":"Honors & Awards",
+    "aw.j1":"Beijing Outstanding Graduate","aw.j2":"Haidar District 2-Star Volunteer","aw.j3":"CUC First-Class Scholarship",
+    "aw.j4":"BLCU First-Class Scholarship","aw.j5":"BLCU Haixing Youcai Scholarship",
+    "aw.j6":"2026 Banqiao Cup Translation Contest, National 1st Prize","aw.j7":"2025 CCDC Beijing 2nd Prize",
+    "aw.j8":"2025 National Translation Compilation Contest, National 3rd Prize",
+    "aw.j9":"2024 FLTRP Cup English, Beijing Bronze","aw.j10":"2024 Language Service Contest, National 3rd Prize",
+    "aw.j11":"6th Chinese Classics Recitation, BLCU 1st Prize","aw.j12":"BLCU Outstanding League Cadre",
+    "aw.h1":"Beijing Outstanding Graduate","aw.h3":"CUC First-Class Scholarship","aw.h4":"BLCU First-Class Scholarship",
+    "aw.h5":"BLCU Haixing Youcai Scholarship","aw.h11":"6th Chinese Classics Recitation, BLCU 1st Prize",
+    "aw.h6":"2026.04 Along the Way Charity Ambassador",
+    "sec.skill":"Skills",
+    "skill.j1":"<strong>Languages:</strong> CATTI Level 3, TEM-8, TEM-4, CET-6 (564), Mandarin L1-B",
+    "skill.j2":"<strong>Localization:</strong> Phrase (CMS), Trados, MemoQ, AntConc",
+    "skill.j3":"<strong>Dev & AI:</strong> HTML, Cursor, FastAPI, SQL, AIGC",
+    "skill.j4":"<strong>Media & Office:</strong> Capcut, Microsoft Office",
+    "skill.h1":"<strong>Languages:</strong> CET-6 (564), TEM-8, Mandarin L1-B",
+    "skill.h2":"<strong>Media & Office:</strong> Capcut, Microsoft Office",
+    "foot.hello":"Feel free to contact me","foot.mail":"📧 Email Me","foot.copy":"©2026 Zhenghe Zhao | Personal resume site"
+  }
+};
+
+let curLang = localStorage.getItem('siteLang') || 'zh';
+// 下拉简历文案：按语言区分（求职组 / 主持组各自两套）
+const DL = {
+  zh: { jobZh:"📄 中文简历", jobEn:"📄 Resume", hostZh:"📄 中文传媒简历", hostEn:"📄 Resume_host" },
+  en: { jobZh:"CV_ZH",      jobEn:"CV_EN",    hostZh:"Media_CH",       hostEn:"Media_EN" }
+};
+function refreshDownloadLabels(){
+  const d = DL[curLang];
+  const set = (cls, txt) => { const el=document.querySelector(cls); if(el) el.textContent=txt; };
+  set('.dl-job-zh', d.jobZh); set('.dl-job-en', d.jobEn);
+  set('.dl-host-zh', d.hostZh); set('.dl-host-en', d.hostEn);
+}
+function applyLang(lang){
+  curLang = lang;
+  document.documentElement.lang = (lang==='en' ? 'en' : 'zh-CN');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(I18N[lang][k] !== undefined) el.textContent = I18N[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-html');
+    if(I18N[lang][k] !== undefined) el.innerHTML = I18N[lang][k];
+  });
+  // 英文版不显示政治面貌（求职/主持都一样）
+  document.querySelectorAll('.party-row').forEach(el=>{
+    el.style.display = (lang==='en' ? 'none' : '');
+  });
+  document.getElementById('langBtn').textContent = (lang==='en' ? '中' : 'EN');
+  // 同步模式按钮文字
+  const btn = document.getElementById('modeBtn');
+  if(btn){
+    if(isJobMode){ btn.textContent = I18N[lang]['nav.toHost']; }
+    else { btn.textContent = I18N[lang]['nav.toJob']; }
+  }
+  refreshDownloadLabels();
+  localStorage.setItem('siteLang', lang);
+}
+function toggleLang(){
+  applyLang(curLang === 'zh' ? 'en' : 'zh');
+}
+
 // ===== 双界面切换：求职版 / 主持版 =====
 let isJobMode = true;
 function switchMode(){
@@ -444,13 +669,11 @@ function switchMode(){
     // 按钮文字
     const btn = document.getElementById('modeBtn');
     if(isJobMode){
-        btn.innerText = '🎤 切换为主持版';
+        btn.innerText = I18N[curLang]['nav.toHost'];
         btn.style.background = '#c2573b';
-        btn.title = '切换为主持求职版';
     } else {
-        btn.innerText = '💼 切换为求职版';
+        btn.innerText = I18N[curLang]['nav.toJob'];
         btn.style.background = '#3b6cb8';
-        btn.title = '求职版';
     }
     window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -463,7 +686,7 @@ function switchMode(){
         window.location.hash.indexOf('host') !== -1 ||
         localStorage.getItem('siteMode') === 'host';
     if (wantHost) {
-        switchMode(); // 默认是求职版，切一次即进入主持版
+        switchMode();
     }
 })();
 
@@ -498,6 +721,8 @@ function initCarousel(carouselId) {
 // 初始化两个轮播
 initCarousel("carouselHost");
 initCarousel("carouselSocial");
+// 应用语言
+applyLang(curLang);
 </script>
 </body>
 </html>
